@@ -82,7 +82,7 @@ async function handleSubmit() {
   feedback.message = ''
   loading.value = true
   try {
-    const res = await fetch('http://localhost:3000/api/contact', {
+    const res = await fetch('https://sartechs-fullstack.vercel.app/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...form }),
