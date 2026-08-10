@@ -3,10 +3,12 @@
     <AppHeader />
     <main class="relative pt-24 overflow-hidden">
       <HeroSection />
+     
       <ServicesSection />
       <AiSection />
       <StatsSection />
       <ProcessSection />
+       <TechEcosystem />
       <ContactSection />
     </main>
     <AppFooter />
@@ -17,6 +19,7 @@
 import { provideLocale } from './i18n/index.js'
 import AppHeader from './components/AppHeader.vue'
 import HeroSection from './components/HeroSection.vue'
+import TechEcosystem from './components/TechEcosystem.vue'
 import ServicesSection from './components/ServicesSection.vue'
 import AiSection from './components/AiSection.vue'
 import StatsSection from './components/StatsSection.vue'

@@ -85,6 +85,10 @@ export const messages = {
         { title: 'Canlıya Alım & Destek', description: 'Projenizi yayınlıyor, süreklilik için teknik destek sağlıyoruz.' },
       ],
     },
+    ecosystem: {
+      title: 'Teknoloji Ekosistemimiz',
+      subtitle: 'En son teknolojilerle güçlendirilmiş modern altyapı.',
+    },
     contact: {
       title1: 'Bir Sonraki',
       titleHighlight: 'Devriminizi',
@@ -195,6 +199,10 @@ export const messages = {
         { title: 'Agile Development',    description: 'We write secure, scalable code with modern technologies.' },
         { title: 'Launch & Support',     description: 'We deploy your project and provide ongoing technical support.' },
       ],
+    },
+    ecosystem: {
+      title: 'Our Technology Ecosystem',
+      subtitle: 'Modern infrastructure powered by the latest technologies.',
     },
     contact: {
       title1: "Let's Kick Off Your",
