@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apex Software Labs | Geleceğin Yazılım Çözümleri</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#690007",
+                      "on-surface": "#e5e2e1",
+                      "surface-raised": "#1e212b",
+                      "on-secondary-fixed-variant": "#474746",
+                      "surface-obsidian": "#060606",
+                      "inverse-on-surface": "#313030",
+                      "on-background": "#e5e2e1",
+                      "on-primary-fixed-variant": "#8e1214",
+                      "surface-container-low": "#1c1b1b",
+                      "primary-container": "#991b1b",
+                      "surface-bright": "#3a3939",
+                      "primary-fixed-dim": "#ffb4ac",
+                      "on-primary-fixed": "#410002",
+                      "on-error-container": "#ffdad6",
+                      "outline-variant": "#59413e",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "inverse-surface": "#e5e2e1",
+                      "on-secondary-container": "#b7b5b4",
+                      "tertiary": "#ffb3ad",
+                      "tertiary-fixed-dim": "#ffb3ad",
+                      "text-secondary": "#9ca3af",
+                      "surface-charcoal": "#11131c",
+                      "tertiary-fixed": "#ffdad7",
+                      "on-secondary-fixed": "#1b1b1c",
+                      "on-tertiary-fixed-variant": "#930013",
+                      "glow-red": "rgba(153, 27, 27, 0.15)",
+                      "surface-container-high": "#2a2a2a",
+                      "background": "#0e0e0e",
+                      "primary-fixed": "#ffdad6",
+                      "on-error": "#690005",
+                      "text-primary": "#ffffff",
+                      "on-tertiary": "#68000a",
+                      "secondary-container": "#474746",
+                      "surface-dim": "#131313",
+                      "on-secondary": "#303030",
+                      "tertiary-container": "#a10016",
+                      "border-subtle": "#2e3039",
+                      "inverse-primary": "#b02d29",
+                      "surface-container": "#201f1f",
+                      "surface-container-lowest": "#060606",
+                      "outline": "#a88a86",
+                      "primary": "#991b1b",
+                      "on-tertiary-fixed": "#410004",
+                      "surface-variant": "#353534",
+                      "on-primary-container": "#ffaaa1",
+                      "on-surface-variant": "#e1bfbb",
+                      "surface": "#0e0e0e",
+                      "secondary": "#c8c6c5",
+                      "surface-container-highest": "#353534",
+                      "secondary-fixed": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "surface-tint": "#ffb4ac",
+                      "on-tertiary-container": "#ffaaa3",
+                      "error": "#ffb4ab"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "stack-lg": "32px",
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "margin-desktop": "40px",
+                      "base": "4px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "section-padding-v": "120px",
+                      "section-padding-v-mobile": "64px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-sm": ["Inter"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "code-md": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"],
+                      "display-xl-mobile": ["Plus Jakarta Sans"],
+                      "display-xl": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "code-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-xl-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px rgba(153, 27, 27, 0.2);
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(153, 27, 27, 0.5);
+            transform: translateY(-1px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% -20%, rgba(153, 27, 27, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 0% 100%, rgba(153, 27, 27, 0.05) 0%, transparent 50%);
+        }
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .rotate-x-2 {
+            transform: rotateX(2deg);
+        }
+        /* Logo filter to harmonize with red theme */
+        .logo-filter {
+            filter: grayscale(100%) brightness(0.9) sepia(100%) hue-rotate(-50deg) saturate(300%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary/30 selection:text-white">
+<!-- Global Background Shader -->
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-obsidian/80 backdrop-blur-md border-b border-white/5">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-3">
+<div class="flex items-center gap-3">
+<img alt="Apex Software Labs" class="h-9 w-auto logo-filter" src="https://lh3.googleusercontent.com/aida/AP1WRLty_fiSjelvnvJUU_N9Vgoqa25s-UYGEfXUw3XsRfqQeEVJsggnyXPwHaO2vaOsO7PgQOOcEMNlh-KiVFSFU-YO4Y3ShyMAICfmpEo18XkrYAVDE_qPXCHTd0Cy-P5dg5pg_O50VYFEJgYJwz1fnZlmQR5gLLDeW1DbsSo0eENeHzU_dEZ0d3UtPAt4ZVJ4eD6MoO9x9tFEM_4JutbsQbTs3wyc9ZlLVTvnLKWOBNAckoIa0p2RmgirmWs"/>
+<span class="font-display-xl-mobile text-[20px] font-bold tracking-tight text-white hidden md:block">APEX SOFTWARE LABS</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-white transition-colors font-label-md" href="#hizmetler">Hizmetler</a>
+<a class="text-on-surface-variant hover:text-white transition-colors font-label-md" href="#surec">Süreç</a>
+<a class="text-on-surface-variant hover:text-white transition-colors font-label-md" href="#projeler">Projeler</a>
+<a class="bg-primary text-white px-5 py-2 rounded-lg font-label-md glow-button" href="#iletisim">Teklif Al</a>
+</nav>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+</div>
+</header>
+<main class="relative pt-24 overflow-hidden">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center px-gutter py-section-padding-v-mobile md:py-section-padding-v relative mesh-gradient">
+<div class="max-w-container-max mx-auto text-center z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md glass-panel mb-8 border-primary/10">
+<span class="text-label-sm text-primary uppercase tracking-widest font-bold">Bespoke Software &amp; Custom AI Solutions</span>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl leading-tight mb-6 max-w-4xl mx-auto tracking-tighter">
+                İşinizi Geleceğe Taşıyan <span class="text-gradient">Özel Yazılım</span> ve Yapay Zeka Çözümleri
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 opacity-80">
+                İhtiyacınıza özel ERP sistemlerinden yüksek performanslı web platformlarına kadar, dijital dönüşümünüzü uçtan uca yönetiyoruz.
+            </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<a class="w-full md:w-auto px-10 py-4 bg-primary text-white rounded-lg font-label-md glow-button" href="#iletisim">
+                    Projenizi Başlatın
+                </a>
+<a class="w-full md:w-auto px-10 py-4 glass-panel text-white rounded-lg font-label-md hover:bg-white/5 transition-all border-white/10" href="#hizmetler">
+                    Çözümlerimizi İnceleyin
+                </a>
+</div>
+</div>
+<!-- Hero Visual: Glassmorphism Dashboard Card -->
+<div class="mt-20 relative w-full max-w-5xl mx-auto px-4 perspective-1000">
+<div class="glass-panel p-6 md:p-8 rounded-xl border-white/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] transform rotate-x-2 transition-transform duration-700 hover:rotate-x-0">
+<div class="flex items-center justify-between mb-8 border-b border-white/5 pb-4">
+<div class="flex gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary/40"></div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">notifications</span>
+<div class="w-7 h-7 rounded-full bg-surface-container-high border border-white/10 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv0F79NkO9VKa1cmN5FfkqX-Hzbayd_b5KgZwFWXV3a5nxzCxuiz5VLnAzE667CQLlx0uO_RXd-P_lda2mjdC-vMpgTXW741bD3mvN4Yqms58St7jhWcYRdVPnlLK11NDSaMheBTlowFuV0-SyE0aPwnM2DhW-JCk8nghIkMjryISzckuO5P2y-hr5YQlZFBHmMCnemVNoS_HQ6sAibs0Lci-qgT5yww4VBoYwucwgI9z2--bvS7XV"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="h-32 rounded-lg bg-white/5 flex flex-col justify-center px-6 border border-white/5">
+<span class="text-label-sm text-on-surface-variant mb-2">Aktif Süreçler</span>
+<span class="text-headline-md font-bold text-white">124%</span>
+</div>
+<div class="h-32 rounded-lg bg-primary/10 flex flex-col justify-center px-6 border border-primary/20">
+<span class="text-label-sm text-on-surface-variant mb-2">Yapay Zeka Verimliliği</span>
+<span class="text-headline-md font-bold text-primary">10x Hız</span>
+</div>
+<div class="h-32 rounded-lg bg-white/5 flex flex-col justify-center px-6 border border-white/5">
+<span class="text-label-sm text-on-surface-variant mb-2">Sistem Sağlığı</span>
+<span class="text-headline-md font-bold text-on-surface">99.9%</span>
+</div>
+</div>
+<div class="mt-8 h-48 rounded-lg bg-white/5 w-full flex items-center justify-center overflow-hidden border border-white/5">
+<div class="w-full h-full bg-cover bg-center opacity-20 grayscale" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEZIgpl6lDz5no4_Zmyrl52mVp-AOgxq2QCsVvjubjzHzH8JXkxLSsAJ_DZxayrKl121YQg9zHHVrv7uQBAcnxtED87L-7L7zi6tLpO-Taz9C0ajNpjZzp707ga-b7e9FRcpFe3ouzHRirUtSOKFqipZh_Oc1PEOlO3UzXKhVPQOsjvSEfldiM2J5ajk12at__c3Epin9cZB_7zvp88lKv9SlMXaO8eNSMf8RupXBM6xMPK9lKK0XG')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="px-gutter py-section-padding-v-mobile md:py-section-padding-v bg-surface-container-lowest/30" id="hizmetler">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-white">
+                        Uçtan Uca Dijital <span class="text-primary">Mühendislik</span>
+</h2>
+<p class="text-body-lg text-on-surface-variant">Geleceğin teknolojilerini bugünün iş ihtiyaçlarıyla buluşturuyoruz.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-[64px] text-primary/10">terminal</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="glass-panel p-8 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl">devices</span>
+</div>
+<h3 class="text-headline-md text-[20px] mb-4 text-white">Özel Web &amp; Mobil Platformlar</h3>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">Kullanıcı deneyimini odağa alan, yüksek performanslı ve ölçeklenebilir dijital çözümler.</p>
+<a class="inline-flex items-center text-primary font-label-md gap-2 group-hover:translate-x-1 transition-transform" href="#">
+                        Detaylar <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-8 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl">hub</span>
+</div>
+<h3 class="text-headline-md text-[20px] mb-4 text-white">Kurumsal ERP &amp; CRM Sistemleri</h3>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">Operasyonel mükemmellik için firmanıza özel terzi usulü yönetim platformları.</p>
+<a class="inline-flex items-center text-primary font-label-md gap-2 group-hover:translate-x-1 transition-transform" href="#">
+                        Detaylar <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-8 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl">code_blocks</span>
+</div>
+<h3 class="text-headline-md text-[20px] mb-4 text-white">Özel Yazılım Geliştirme</h3>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">Karmaşık iş süreçlerini kolaylaştıran, güvenli ve esnek yazılım mimarileri.</p>
+<a class="inline-flex items-center text-primary font-label-md gap-2 group-hover:translate-x-1 transition-transform" href="#">
+                        Detaylar <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel p-8 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h3 class="text-headline-md text-[20px] mb-4 text-white">Yapay Zeka &amp; Otomasyon</h3>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">İş akışlarını otopilota alan akıllı algoritmalar ve LLM entegrasyonları.</p>
+<a class="inline-flex items-center text-primary font-label-md gap-2 group-hover:translate-x-1 transition-transform" href="#">
+                        Detaylar <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Highlight Section -->
+<section class="px-gutter py-section-padding-v-mobile md:py-section-padding-v relative overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="absolute -inset-10 bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="glass-panel p-2 rounded-xl relative z-10 overflow-hidden border-white/10">
+<div class="bg-surface-obsidian rounded-lg p-1 overflow-hidden h-[500px]">
+<img class="w-full h-full object-cover rounded-md opacity-60 grayscale hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfpCUN3OlvCZ5mhdfKYSRH7hUB6OFv5FoonzdxU_q5wSwVW9YtlweLnhEESIEAql596fl4Hyezdy2u7LGOx6-HX8Ux74572JLO5fkdSffV-HRWTSQsEpwJghvzob1KPAnVOH31PtseoOX4ENZA4qSY4BsPdKxAOgUuoLCLlIkC8stgpCIWtTo5TzBgC2_yWLoeF-99NBvFerlLfsGRbiz-lEvWOarpdwwIEcaoDnJ8jVJSn2cxx4LI"/>
+</div>
+<div class="absolute bottom-10 left-10 right-10 glass-panel p-6 rounded-lg border-white/10 bg-surface-obsidian/40">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-label-sm font-bold tracking-widest text-white uppercase">Apex AI Engine Active</span>
+</div>
+<p class="text-label-md text-on-surface-variant italic font-medium">"Süreç analizi tamamlandı. Verimlilik %85 oranında optimize edildi."</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8 text-white tracking-tight">
+                    Yapay Zeka ile Süreçlerinizi <span class="text-gradient">Otopilota</span> Alın
+                </h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-md glass-panel flex items-center justify-center border-white/10">
+<span class="material-symbols-outlined text-primary text-xl">psychology</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-2 text-white">Akıllı Karar Mekanizmaları</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Veri yığınlarını anlamlı içgörülere dönüştürerek stratejik kararlarınızı destekliyoruz.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-md glass-panel flex items-center justify-center border-white/10">
+<span class="material-symbols-outlined text-primary text-xl">bolt</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-2 text-white">Hızlandırılmış Operasyon</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Tekrar eden görevleri otonom sistemlere devrederek ekibinizin yaratıcılığa odaklanmasını sağlıyoruz.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-md glass-panel flex items-center justify-center border-white/10">
+<span class="material-symbols-outlined text-primary text-xl">security</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-2 text-white">Öngörülebilir Güvenlik</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Anomali tespiti ve proaktif savunma sistemleri ile verilerinizi en üst düzeyde koruyoruz.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="px-gutter py-24 bg-primary/5 border-y border-primary/10">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div>
+<div class="text-display-xl-mobile md:text-[56px] font-extrabold text-white mb-2 tracking-tighter">99.9%</div>
+<div class="text-label-md uppercase tracking-widest text-primary font-bold">Reliability</div>
+</div>
+<div>
+<div class="text-display-xl-mobile md:text-[56px] font-extrabold text-white mb-2 tracking-tighter">10x</div>
+<div class="text-label-md uppercase tracking-widest text-primary font-bold">Speed</div>
+</div>
+<div>
+<div class="text-display-xl-mobile md:text-[56px] font-extrabold text-white mb-2 tracking-tighter">100%</div>
+<div class="text-label-md uppercase tracking-widest text-primary font-bold">Bespoke</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="px-gutter py-section-padding-v-mobile md:py-section-padding-v" id="surec">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-white">Mükemmelliğe Giden <span class="text-primary">Yol</span></h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-70">Sistemli ve şeffaf çalışma modelimizle başarıyı garantiliyoruz.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+<!-- Connector line for desktop -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent z-0"></div>
+<div class="relative z-10 glass-panel p-8 rounded-xl text-center group hover:bg-white/[0.03] transition-colors border-white/5">
+<div class="w-10 h-10 bg-surface-obsidian text-primary border border-primary/20 rounded-md flex items-center justify-center mx-auto mb-6 font-bold text-sm group-hover:border-primary transition-colors">01</div>
+<h4 class="font-headline-md text-[18px] mb-3 text-white">Analiz &amp; Strateji</h4>
+<p class="text-on-surface-variant text-xs leading-relaxed opacity-80">İhtiyaçlarınızı derinlemesine inceliyor, yol haritasını belirliyoruz.</p>
+</div>
+<div class="relative z-10 glass-panel p-8 rounded-xl text-center group hover:bg-white/[0.03] transition-colors border-white/5">
+<div class="w-10 h-10 bg-surface-obsidian text-primary border border-primary/20 rounded-md flex items-center justify-center mx-auto mb-6 font-bold text-sm group-hover:border-primary transition-colors">02</div>
+<h4 class="font-headline-md text-[18px] mb-3 text-white">Mimari &amp; UI/UX</h4>
+<p class="text-on-surface-variant text-xs leading-relaxed opacity-80">Estetiği fonksiyonla birleştiren, kullanıcı dostu arayüzler tasarlıyoruz.</p>
+</div>
+<div class="relative z-10 glass-panel p-8 rounded-xl text-center group hover:bg-white/[0.03] transition-colors border-white/5">
+<div class="w-10 h-10 bg-surface-obsidian text-primary border border-primary/20 rounded-md flex items-center justify-center mx-auto mb-6 font-bold text-sm group-hover:border-primary transition-colors">03</div>
+<h4 class="font-headline-md text-[18px] mb-3 text-white">Çevik Geliştirme</h4>
+<p class="text-on-surface-variant text-xs leading-relaxed opacity-80">Modern teknolojilerle güvenli ve ölçeklenebilir kod yazıyoruz.</p>
+</div>
+<div class="relative z-10 glass-panel p-8 rounded-xl text-center group hover:bg-white/[0.03] transition-colors border-white/5">
+<div class="w-10 h-10 bg-surface-obsidian text-primary border border-primary/20 rounded-md flex items-center justify-center mx-auto mb-6 font-bold text-sm group-hover:border-primary transition-colors">04</div>
+<h4 class="font-headline-md text-[18px] mb-3 text-white">Canlıya Alım &amp; Destek</h4>
+<p class="text-on-surface-variant text-xs leading-relaxed opacity-80">Projenizi yayınlıyor, süreklilik için teknik destek sağlıyoruz.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="px-gutter py-section-padding-v-mobile md:py-section-padding-v relative mesh-gradient" id="iletisim">
+<div class="max-w-4xl mx-auto glass-panel p-8 md:p-16 rounded-xl border-white/10 shadow-2xl">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-white tracking-tight">Bir Sonraki <span class="text-primary">Devriminizi</span> Başlatalım</h2>
+<p class="text-on-surface-variant">Ekibimiz 24 saat içinde size özel bir strateji ile dönüş yapacaktır.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant pl-1">Ad Soyad</label>
+<input class="w-full bg-white/[0.03] border border-white/10 rounded-lg px-5 py-3.5 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-white/10 text-white" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant pl-1">Şirket E-postası</label>
+<input class="w-full bg-white/[0.03] border border-white/10 rounded-lg px-5 py-3.5 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-white/10 text-white" placeholder="john@company.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant pl-1">Hizmet Türü</label>
+<select class="w-full bg-white/[0.03] border border-white/10 rounded-lg px-5 py-3.5 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all text-white appearance-none">
+<option class="bg-surface-obsidian">Özel Yazılım Geliştirme</option>
+<option class="bg-surface-obsidian">Yapay Zeka Entegrasyonu</option>
+<option class="bg-surface-obsidian">Mobil Uygulama</option>
+<option class="bg-surface-obsidian">ERP &amp; CRM Çözümleri</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant pl-1">Proje Detayları</label>
+<textarea class="w-full bg-white/[0.03] border border-white/10 rounded-lg px-5 py-3.5 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-white/10 text-white" placeholder="Projenizden kısaca bahseder misiniz?" rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-white rounded-lg font-bold text-base glow-button tracking-widest transition-all uppercase" type="submit">
+                    TEKLİF TALEBİ GÖNDER
+                </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 bg-surface-obsidian">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-section-padding-v-mobile max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<img alt="Apex Software Labs" class="h-10 w-auto logo-filter" src="https://lh3.googleusercontent.com/aida/AP1WRLty_fiSjelvnvJUU_N9Vgoqa25s-UYGEfXUw3XsRfqQeEVJsggnyXPwHaO2vaOsO7PgQOOcEMNlh-KiVFSFU-YO4Y3ShyMAICfmpEo18XkrYAVDE_qPXCHTd0Cy-P5dg5pg_O50VYFEJgYJwz1fnZlmQR5gLLDeW1DbsSo0eENeHzU_dEZ0d3UtPAt4ZVJ4eD6MoO9x9tFEM_4JutbsQbTs3wyc9ZlLVTvnLKWOBNAckoIa0p2RmgirmWs"/>
+<p class="text-on-surface-variant text-xs max-w-xs text-center md:text-left opacity-60">Geleceğin teknolojilerini kullanarak işletmenizi dijital çağda zirveye taşıyoruz.</p>
+</div>
+<div class="flex gap-12">
+<div class="flex flex-col gap-3 text-center md:text-left">
+<span class="font-label-md text-primary mb-2 uppercase tracking-widest text-[10px]">Şirket</span>
+<a class="text-on-surface-variant hover:text-white transition-colors text-xs" href="#">Hizmetler</a>
+<a class="text-on-surface-variant hover:text-white transition-colors text-xs" href="#">Süreç</a>
+<a class="text-on-surface-variant hover:text-white transition-colors text-xs" href="#">Projeler</a>
+</div>
+<div class="flex flex-col gap-3 text-center md:text-left">
+<span class="font-label-md text-primary mb-2 uppercase tracking-widest text-[10px]">Destek</span>
+<a class="text-on-surface-variant hover:text-white transition-colors text-xs" href="#">İletişim</a>
+<a class="text-on-surface-variant hover:text-white transition-colors text-xs" href="#">Kariyer</a>
+<a class="text-on-surface-variant hover:text-white transition-colors text-xs" href="#">Blog</a>
+</div>
+</div>
+<div class="flex flex-col items-center md:items-end gap-6">
+<div class="flex gap-4">
+<a class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5" href="#">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</a>
+<a class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5" href="#">
+<span class="material-symbols-outlined text-[18px]">alternate_email</span>
+</a>
+</div>
+<p class="font-body-md text-[11px] text-on-surface-variant opacity-40">© 2024 Apex Software Labs. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+<script>
+    // Simple scroll reveal interaction
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+        observer.observe(section);
+    });
+</script>
+</body></html>
