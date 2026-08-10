@@ -7,11 +7,14 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 // Middleware
-app.use(express.json())
+app.use(express.json());
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGIN || 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173', 
+    'https://sartechs.com'
+  ],
   methods: ['POST'],
-}))
+}));
 
 // Nodemailer transporter
 const transporter = nodemailer.createTransport({
