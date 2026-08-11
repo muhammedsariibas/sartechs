@@ -38,7 +38,6 @@
         >
           {{ t('nav.cta') }}
         </a>
-        <!-- Language toggle -->
         <button
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass-panel border-white/10 text-xs font-bold tracking-widest uppercase text-on-surface-variant hover:text-white transition-colors"
           @click="toggleLocale"
@@ -100,8 +99,9 @@ function toggleLocale() {
 
 const navLinks = computed(() => [
   { id: 'hizmetler', label: t('nav.services') },
-  { id: 'surec',     label: t('nav.process') },
-  { id: 'projeler',  label: t('nav.projects') },
+  { id: 'surec', label: t('nav.process') },
+  { id: 'hakkimizda', label: t('nav.about') },
+  { id: 'projeler', label: t('nav.projects') },
 ])
 
 const activeSection = ref(null)

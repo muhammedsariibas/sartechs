@@ -30,18 +30,14 @@
             <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
             <div class="w-2.5 h-2.5 rounded-full bg-primary/40"></div>
           </div>
-          <div class="flex items-center gap-4">
-            <span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
-            <span class="material-symbols-outlined text-on-surface-variant text-sm">notifications</span>
-            <div class="w-7 h-7 rounded-full bg-surface-container-high border border-white/10 overflow-hidden">
-              <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv0F79NkO9VKa1cmN5FfkqX-Hzbayd_b5KgZwFWXV3a5nxzCxuiz5VLnAzE667CQLlx0uO_RXd-P_lda2mjdC-vMpgTXW741bD3mvN4Yqms58St7jhWcYRdVPnlLK11NDSaMheBTlowFuV0-SyE0aPwnM2DhW-JCk8nghIkMjryISzckuO5P2y-hr5YQlZFBHmMCnemVNoS_HQ6sAibs0Lci-qgT5yww4VBoYwucwgI9z2--bvS7XV" alt="avatar" />
-            </div>
+          <div class="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[10px] uppercase tracking-[0.18em] text-on-surface-variant">
+            LIVE
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="h-32 rounded-lg bg-white/5 flex flex-col justify-center px-6 border border-white/5">
             <span class="text-label-sm text-on-surface-variant mb-2">{{ t('hero.stat1Label') }}</span>
-            <span class="text-headline-md font-bold text-white">124%</span>
+            <span class="text-headline-md font-bold text-white">{{ t('hero.stat1Value') }}</span>
           </div>
           <div class="h-32 rounded-lg bg-primary/10 flex flex-col justify-center px-6 border border-primary/20">
             <span class="text-label-sm text-on-surface-variant mb-2">{{ t('hero.stat2Label') }}</span>

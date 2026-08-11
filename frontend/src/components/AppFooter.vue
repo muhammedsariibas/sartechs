@@ -36,7 +36,7 @@
             <span class="material-symbols-outlined text-[18px]">alternate_email</span>
           </a>
         </div>
-        <p class="font-body-md text-[11px] text-on-surface-variant opacity-40">{{ t('footer.copyright') }}</p>
+        <p class="font-body-md text-[11px] text-on-surface-variant opacity-40">© {{ new Date().getFullYear() }} {{ t('footer.copyright') }}</p>
       </div>
     </div>
   </footer>

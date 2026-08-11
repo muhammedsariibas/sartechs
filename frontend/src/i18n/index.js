@@ -8,18 +8,20 @@ export const messages = {
       services: 'Hizmetler',
       process: 'Süreç',
       projects: 'Projeler',
+      about: 'Hakkımızda',
       cta: 'Teklif Al',
       ctac: 'Teklif Al',
     },
     hero: {
-      badge: 'Bespoke Software & Custom AI Solutions',
+      badge: 'Özel Yazılım & Özel Yapay Zeka Çözümleri',
       title1: 'İşinizi Geleceğe Taşıyan',
       titleHighlight: 'Özel Yazılım',
       title2: 've Yapay Zeka Çözümleri',
       subtitle: 'İhtiyacınıza özel ERP sistemlerinden yüksek performanslı web platformlarına kadar, dijital dönüşümünüzü uçtan uca yönetiyoruz.',
       ctaPrimary: 'Projenizi Başlatın',
       ctaSecondary: 'Çözümlerimizi İnceleyin',
-      stat1Label: 'Aktif Süreçler',
+      stat1Label: 'Verimlilik Artışı',
+      stat1Value: '+%124',
       stat2Label: 'Yapay Zeka Verimliliği',
       stat2Value: '10x Hız',
       stat3Label: 'Sistem Sağlığı',
@@ -50,7 +52,7 @@ export const messages = {
     },
     ai: {
       engineLabel: 'Sartechs AI Engine Active',
-      engineQuote: '"Süreç analizi tamamlandı. Verimlilik %85 oranında optimize edildi."',
+      engineQuote: '"Süreç analizi tamamlandı. Operasyonel performans +%124 seviyesinde iyileştirildi."',
       title1: 'Yapay Zeka ile Süreçlerinizi',
       titleHighlight: 'Otopilota',
       title2: 'Alın',
@@ -111,11 +113,52 @@ export const messages = {
     },
     footer: {
       tagline: 'Geleceğin teknolojilerini kullanarak işletmenizi dijital çağda zirveye taşıyoruz.',
-      copyright: '© 2024 Sartechs. Tüm hakları saklıdır.',
+      copyright: 'Sartechs. Tüm hakları saklıdır.',
       company: 'Şirket',
       support: 'Destek',
       companyLinks: ['Hizmetler', 'Süreç', 'Projeler'],
       supportLinks: ['İletişim', 'Kariyer', 'Blog'],
+    },
+    about: {
+      title1: 'Biz',
+      titleHighlight: 'Kimiz?',
+      title2: '',
+      subtitle: 'Sartechs, işletmelerin süreçlerini yeniden tasarlayan, özel yazılım ve yapay zeka mimarileri kuran bir teknoloji ortağıdır.',
+      points: [
+        'İş kritikliği yüksek sistemler için net mimari ve güvenli geliştirme yaklaşımı.',
+        'Kurumsal operasyonları dönüştüren ERP, otomasyon ve dijital platform çözümleri.',
+        'İster ürün, ister operasyonel akış olsun; her adımda teknik ve iş odaklı ekip desteği.',
+      ],
+      techs: ['Node.js', 'Vue', 'Spring Boot', 'PostgreSQL', 'Docker', 'LLM'],
+      card: {
+        label: 'Müşteriler neden bizi seçer',
+        title: 'Strateji, ürün ve teslimat',
+        items: [
+          {
+            title: 'İş odaklı düşünme',
+            description: 'İş süreçlerini teknolojiyle değil, iş değeriyle eşleştirerek çözümler üretiyoruz.'
+          },
+          {
+            title: 'Net ve güvenli yürütme',
+            description: 'Mimari, geliştirme ve yayın sonrası süreçlerde net iletişim ve güvenli ilerleme sağlıyoruz.'
+          },
+          {
+            title: 'Modern mühendislik ekosistemi',
+            description: ''
+          }
+        ]
+      }
+    },
+    projects: {
+      title1: 'Önceki',
+      titleHighlight: 'Başarı Hikâyeleri',
+      title2: '',
+      subtitle: 'Yüksek güven gerektiren iş akışlarında, özel yazılım ve AI çözümleriyle ölçülebilir sonuçlar üretiyoruz.',
+      items: [
+        { name: 'NorthPeak Logistics', metric: '+42% operasyonel verimlilik', detail: 'ERP ve otomasyon odaklı süreç modernizasyonu.' },
+        { name: 'VerdeOne', metric: '3x daha hızlı ekip koordinasyonu', detail: 'İç operasyon ve müşteri akışı dijitalleşmesi.' },
+        { name: 'HelioOps', metric: '+68% müşteri yanıt hızı', detail: 'Yapay zeka destekli destek ve yönetişim sistemi.' },
+      ],
     },
   },
 
@@ -124,17 +167,19 @@ export const messages = {
       services: 'Services',
       process: 'Process',
       projects: 'Projects',
+      about: 'About',
       cta: 'Get a Quote',
     },
     hero: {
-      badge: 'Bespoke Software & Custom AI Solutions',
+      badge: 'Custom Software & AI Solutions',
       title1: 'Custom Software',
       titleHighlight: '& AI Solutions',
       title2: 'That Drive Your Business Forward',
       subtitle: 'From tailor-made ERP systems to high-performance web platforms, we manage your digital transformation end-to-end.',
       ctaPrimary: 'Start Your Project',
       ctaSecondary: 'Explore Our Solutions',
-      stat1Label: 'Active Processes',
+      stat1Label: 'Performance Lift',
+      stat1Value: '+124%',
       stat2Label: 'AI Efficiency',
       stat2Value: '10x Speed',
       stat3Label: 'System Health',
@@ -165,7 +210,7 @@ export const messages = {
     },
     ai: {
       engineLabel: 'Sartechs AI Engine Active',
-      engineQuote: '"Process analysis complete. Efficiency optimized by 85%."',
+      engineQuote: '"Process analysis complete. Operational performance improved by 124%."',
       title1: 'Put Your Processes on',
       titleHighlight: 'Autopilot',
       title2: 'with AI',
@@ -226,11 +271,52 @@ export const messages = {
     },
     footer: {
       tagline: 'Leveraging tomorrow\'s technologies to elevate your business in the digital age.',
-      copyright: '© 2024 Sartechs. All rights reserved.',
+      copyright: 'Sartechs. All rights reserved.',
       company: 'Company',
       support: 'Support',
       companyLinks: ['Services', 'Process', 'Projects'],
       supportLinks: ['Contact', 'Careers', 'Blog'],
+    },
+    about: {
+      title1: 'Who',
+      titleHighlight: 'We Are',
+      title2: '',
+      subtitle: 'Sartechs is a technology partner that redesigns business operations through custom software and AI architectures.',
+      points: [
+        'Clear architecture and secure delivery for high-impact business systems.',
+        'ERP, automation, and digital platform solutions that transform operations.',
+        'Hands-on technical partnership from strategy to production support.',
+      ],
+      techs: ['Node.js', 'Vue', 'Spring Boot', 'PostgreSQL', 'Docker', 'LLM'],
+      card: {
+        label: 'Why clients choose us',
+        title: 'Strategy, product and delivery',
+        items: [
+          {
+            title: 'Business-first thinking',
+            description: 'We design solutions by aligning processes with business value, not just technology.'
+          },
+          {
+            title: 'Clear execution',
+            description: 'We maintain transparent communication and safe delivery across architecture, development, and post-launch support.'
+          },
+          {
+            title: 'Modern engineering stack',
+            description: ''
+          }
+        ]
+      }
+    },
+    projects: {
+      title1: 'Selected',
+      titleHighlight: 'Success Stories',
+      title2: '',
+      subtitle: 'We deliver measurable business outcomes with custom software and AI systems built for operational resilience.',
+      items: [
+        { name: 'NorthPeak Logistics', metric: '+42% operational efficiency', detail: 'ERP and workflow modernization for critical operations.' },
+        { name: 'VerdeOne', metric: '3x faster team coordination', detail: 'Customer journey and internal operations digitization.' },
+        { name: 'HelioOps', metric: '+68% response speed', detail: 'AI-assisted support and governance platform.' },
+      ],
     },
   },
 }

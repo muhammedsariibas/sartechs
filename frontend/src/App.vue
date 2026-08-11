@@ -3,12 +3,13 @@
     <AppHeader />
     <main class="relative pt-24 overflow-hidden">
       <HeroSection />
-     
       <ServicesSection />
       <AiSection />
       <StatsSection />
       <ProcessSection />
-       <TechEcosystem />
+      <AboutSection />
+      <!-- <ProjectsSection /> -->
+      <TechEcosystem />
       <ContactSection />
     </main>
     <AppFooter />
@@ -25,6 +26,8 @@ import AiSection from './components/AiSection.vue'
 import StatsSection from './components/StatsSection.vue'
 import ProcessSection from './components/ProcessSection.vue'
 import ContactSection from './components/ContactSection.vue'
+import AboutSection from './components/AboutSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
 import AppFooter from './components/AppFooter.vue'
 
 provideLocale()
