@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="absolute inset-0 w-full h-full pointer-events-none"></div>
+  <div ref="container" class="absolute inset-0 w-full h-full pointer-events-none hero-background"></div>
 </template>
 
 <script setup>
@@ -7,7 +7,45 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import * as THREE from 'three'
 
 const container = ref(null)
-let renderer, animId
+let renderer, animId, camera, core, innerCore
+let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0
+
+const MOBILE_BREAKPOINT = 768
+const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+
+const updateSceneSize = () => {
+  const el = container.value
+  if (!el || !renderer || !camera) return
+
+  const w = el.clientWidth || window.innerWidth
+  const h = el.clientHeight || window.innerHeight
+  const isMobile = w < MOBILE_BREAKPOINT
+
+  renderer.setSize(w, h)
+  camera.aspect = w / h
+  camera.fov = isMobile ? 80 : 75
+  camera.position.z = isMobile ? 6.5 : 5
+  camera.updateProjectionMatrix()
+
+  if (core && innerCore) {
+    const coreScale = isMobile ? 0.85 : 1
+    const innerScale = isMobile ? 0.65 : 1
+    core.scale.set(coreScale, coreScale, coreScale)
+    innerCore.scale.set(innerScale, innerScale, innerScale)
+  }
+}
+
+const handlePointer = (clientX, clientY) => {
+  targetX = (clientX / window.innerWidth - 0.5) * 2
+  targetY = (clientY / window.innerHeight - 0.5) * 2
+}
+
+const onMouse = (e) => handlePointer(e.clientX, e.clientY)
+const onTouchMove = (e) => {
+  const touch = e.touches[0]
+  if (!touch) return
+  handlePointer(touch.clientX, touch.clientY)
+}
 
 onMounted(() => {
   const el = container.value
@@ -15,7 +53,7 @@ onMounted(() => {
   const h = el.clientHeight || window.innerHeight
 
   const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000)
+  camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000)
   camera.position.z = 5
 
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
@@ -23,36 +61,25 @@ onMounted(() => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   el.appendChild(renderer.domElement)
 
-  // Outer wireframe
-  const core = new THREE.Mesh(
+  core = new THREE.Mesh(
     new THREE.IcosahedronGeometry(2, 1),
     new THREE.MeshNormalMaterial({ wireframe: true, transparent: true, opacity: 0.3 })
   )
   scene.add(core)
 
-  // Inner glow
-  const innerCore = new THREE.Mesh(
+  innerCore = new THREE.Mesh(
     new THREE.IcosahedronGeometry(1, 0),
     new THREE.MeshNormalMaterial({ wireframe: false, transparent: true, opacity: 0.8 })
   )
   scene.add(innerCore)
 
-  let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0
-
-  const onMouse = (e) => {
-    targetX = (e.clientX / window.innerWidth - 0.5) * 2
-    targetY = (e.clientY / window.innerHeight - 0.5) * 2
-  }
-  const onResize = () => {
-    const nw = el.clientWidth || window.innerWidth
-    const nh = el.clientHeight || window.innerHeight
-    camera.aspect = nw / nh
-    camera.updateProjectionMatrix()
-    renderer.setSize(nw, nh)
-  }
+  updateSceneSize()
 
   window.addEventListener('mousemove', onMouse)
-  window.addEventListener('resize', onResize)
+  if (isTouchDevice) {
+    window.addEventListener('touchmove', onTouchMove, { passive: true })
+  }
+  window.addEventListener('resize', updateSceneSize)
 
   const animate = () => {
     animId = requestAnimationFrame(animate)
@@ -65,10 +92,11 @@ onMounted(() => {
     innerCore.rotation.x -= 0.01
     innerCore.rotation.y -= 0.012
 
-    core.position.x = mouseX * 0.5
-    core.position.y = -mouseY * 0.5
-    innerCore.position.x = mouseX * 0.7
-    innerCore.position.y = -mouseY * 0.7
+    const motionFactor = window.innerWidth < MOBILE_BREAKPOINT ? 0.35 : 0.5
+    core.position.x = mouseX * motionFactor
+    core.position.y = -mouseY * motionFactor
+    innerCore.position.x = mouseX * motionFactor * 1.2
+    innerCore.position.y = -mouseY * motionFactor * 1.2
 
     renderer.render(scene, camera)
   }
@@ -78,7 +106,23 @@ onMounted(() => {
     cancelAnimationFrame(animId)
     renderer.dispose()
     window.removeEventListener('mousemove', onMouse)
-    window.removeEventListener('resize', onResize)
+    if (isTouchDevice) {
+      window.removeEventListener('touchmove', onTouchMove)
+    }
+    window.removeEventListener('resize', updateSceneSize)
   })
 })
 </script>
+
+<style scoped>
+.hero-background {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .hero-background {
+    opacity: 0.65;
+  }
+}
+</style>
