@@ -10,6 +10,7 @@
       <AboutSection />
       <!-- <ProjectsSection /> -->
       <TechEcosystem />
+      <SssSection />
       <ContactSection />
     </main>
     <AppFooter />
@@ -25,6 +26,7 @@ import ServicesSection from './components/ServicesSection.vue'
 import AiSection from './components/AiSection.vue'
 import StatsSection from './components/StatsSection.vue'
 import ProcessSection from './components/ProcessSection.vue'
+import SssSection from './components/SssSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'

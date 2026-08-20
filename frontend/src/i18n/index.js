@@ -129,7 +129,7 @@ export const messages = {
       labelDetails: 'Proje Detayları',
       placeholderDetails: 'Projenizden kısaca bahseder misiniz?',
       submit: 'TEKLİF TALEBİ GÖNDER',
-      email: 'sariibasmuhammed@gmail.com',
+      email: 'yusuf@sartechs.com',
       location: 'Türkiye / Uzaktan çalışma',
       quickContact: 'Hızlı iletişim için e-posta gönder',
       quickSubject: 'Acil proje görüşmesi',
@@ -159,7 +159,7 @@ export const messages = {
       legalDocuments: [
         { id: 'gizlilik', title: 'Gizlilik Politikası', body: 'Teklif formunda paylaştığınız bilgiler yalnızca iletişim kurmak ve talebinizi değerlendirmek amacıyla işlenir. Verileriniz yetkisiz kişilerle paylaşılmaz.' },
         { id: 'cerez', title: 'Çerez Politikası', body: 'Bu tek sayfalık deneyim, zorunlu olmayan pazarlama çerezleri kullanmadan çalışır. Kullanılan teknik depolama, dil tercihi gibi temel deneyim ihtiyaçlarıyla sınırlıdır.' },
-        { id: 'kvkk', title: 'KVKK Aydınlatma', body: '6698 sayılı Kanun kapsamındaki talepleriniz ve veri sahibi haklarınız için sariibasmuhammed@gmail.com adresinden bize ulaşabilirsiniz.' },
+        { id: 'kvkk', title: 'KVKK Aydınlatma', body: '6698 sayılı Kanun kapsamındaki talepleriniz ve veri sahibi haklarınız için yusuf@sartechs.com adresinden bize ulaşabilirsiniz.' },
       ],
     },
     about: {
@@ -201,6 +201,38 @@ export const messages = {
         { name: 'NorthPeak Logistics', metric: '+42% operasyonel verimlilik', problem: 'Dağınık operasyon verileri ve manuel planlama.', solution: 'ERP, iş akışı otomasyonu ve merkezi raporlama.', result: '+42% operasyonel verimlilik.' },
         { name: 'VerdeOne', metric: '3x daha hızlı ekip koordinasyonu', problem: 'Ekipler arası bilgi akışı ve müşteri takibi kopuktu.', solution: 'İç operasyon paneli ve birleşik müşteri akışı.', result: '3x daha hızlı ekip koordinasyonu.' },
         { name: 'HelioOps', metric: '+68% müşteri yanıt hızı', problem: 'Destek talepleri önceliklendirilemeden birikiyordu.', solution: 'AI destekli sınıflandırma, yanıt ve yönetişim sistemi.', result: '+68% müşteri yanıt hızı.' },
+      ],
+    },
+    faq: {
+      title1: 'Sıkça Sorulan',
+      titleHighlight: 'Sorular',
+      title2: '',
+      subtitle: 'Fiyatlandırma, sözleşme, destek ve daha fazlasını öğrenin.',
+      items: [
+        {
+          question: 'Fiyatlandırma nasıl belirleniyor?',
+          answer: 'Fiyatlandırma her projenin kapsamı, karmaşıklığı ve ihtiyaçlarına göre belirlenir. İlk danışmamızda projenizi ayrıntılı anlar, teknik gereksinimleri değerlendiririz ve size şeffaf bir fiyat teklifi sunarız. Sabit fiyat modeli veya zaman ve malzeme bazlı modeller arasında seçim yapabilirsiniz.'
+        },
+        {
+          question: 'Sözleşme süreçleri nasıl işliyor?',
+          answer: 'Proje başlamadan önce kapsamı, zaman çizelgesi, ödemeler ve sorumluluklarını tanımlamış Hizmet Sözleşmesi imzalıyoruz. Her aşama net, ilerleme düzenli raporlama ile takip edilir. Değişiklik talepleri resmi taleplerle yönetilir ve bütçe etkilemeleri beraber değerlendirilir.'
+        },
+        {
+          question: 'Bakım ve destek hizmeti nasıl veriliyor?',
+          answer: 'Proje tamamlandıktan sonra, devam eden teknik destek paketleri sunuyoruz. Hata düzeltmeleri, performans iyileştirmeleri ve gerekli güncellemeler, seçtiğiniz destek seviyesine göre sağlanır. 24 saat içinde yanıt vermeyi hedefleyen acil sorunlar ve planlı bakım seansları yapılır.'
+        },
+        {
+          question: 'Proje süresi ne kadar sürer?',
+          answer: 'Proje süresi kapsamına bağlıdır. Basit web platformları 2-3 ay, ERP sistemleri 4-8 ay, kompleks AI entegrasyonları 3-6 ay sürebilir. Başlangıçta size bağlayıcı bir zaman çizelgesi sunuyoruz ve Çevik metodoloji ile iki haftalık sprint döngüleriyle ilerleriz.'
+        },
+        {
+          question: 'Teknoloji seçiminde esneklik var mı?',
+          answer: 'Evet. İş gereksinimlerinize ve ekip yetkinliklerine en iyi uygun teknolojiyi birlikte seçeriz. Node.js, Vue.js, React, Spring Boot, PostgreSQL, MongoDB gibi çeşitli stack\'ler konusunda deneyimli olup, sizin kurumsal tercihleri de göz önüne alırız.'
+        },
+        {
+          question: 'Verilerimiz güvende midir?',
+          answer: 'Güvenlik bizim en üst önceliğimizdir. Şifreli iletişim, güvenli kimlik doğrulama, düzenli güvenlik denetimleri ve GDPR/KVKK uyumluluğu sağlıyoruz. Verileri güvenli bulut altyapılarında barındırırız ve yedekleme stratejileriyle uzun vadeli koruma yapıyoruz.'
+        },
       ],
     },
   },
@@ -330,7 +362,7 @@ export const messages = {
       labelDetails: 'Project Details',
       placeholderDetails: 'Tell us a bit about your project.',
       submit: 'SEND QUOTE REQUEST',
-      email: 'sariibasmuhammed@gmail.com',
+      email: 'yusuf@sartechs.com',
       location: 'Türkiye / Remote delivery',
       quickContact: 'Email us for an urgent conversation',
       quickSubject: 'Urgent project conversation',
@@ -360,7 +392,7 @@ export const messages = {
       legalDocuments: [
         { id: 'gizlilik', title: 'Privacy Policy', body: 'Information shared through the quote form is processed only to contact you and evaluate your request. We do not share it with unauthorized parties.' },
         { id: 'cerez', title: 'Cookie Policy', body: 'This single-page experience works without non-essential marketing cookies. Technical storage is limited to core experience needs such as language preference.' },
-        { id: 'kvkk', title: 'KVKK Notice', body: 'For data subject requests under Turkish data protection law, contact us at sariibasmuhammed@gmail.com.' },
+        { id: 'kvkk', title: 'KVKK Notice', body: 'For data subject requests under Turkish data protection law, contact us at yusuf@sartechs.com.' },
       ],
     },
     about: {
@@ -402,6 +434,38 @@ export const messages = {
         { name: 'NorthPeak Logistics', metric: '+42% operational efficiency', problem: 'Fragmented operations data and manual planning.', solution: 'ERP, workflow automation, and centralized reporting.', result: '+42% operational efficiency.' },
         { name: 'VerdeOne', metric: '3x faster team coordination', problem: 'Team information flow and customer follow-up were disconnected.', solution: 'Internal operations panel and unified customer journey.', result: '3x faster team coordination.' },
         { name: 'HelioOps', metric: '+68% response speed', problem: 'Support requests accumulated without prioritization.', solution: 'AI-assisted classification, response, and governance platform.', result: '+68% response speed.' },
+      ],
+    },
+    faq: {
+      title1: 'Frequently Asked',
+      titleHighlight: 'Questions',
+      title2: '',
+      subtitle: 'Learn about pricing, contracts, support, and more.',
+      items: [
+        {
+          question: 'How is pricing determined?',
+          answer: 'Pricing is tailored to your project scope, complexity, and requirements. During our initial consultation, we understand your project in detail, assess technical needs, and provide a transparent quote. You can choose between fixed-price or time-and-materials models.'
+        },
+        {
+          question: 'How do contract processes work?',
+          answer: 'Before starting, we sign a Service Agreement that defines scope, timeline, payments, and responsibilities. Each phase is clear, and progress is tracked with regular reporting. Change requests are managed through formal requests, and budget impacts are discussed together.'
+        },
+        {
+          question: 'How is maintenance and support service provided?',
+          answer: 'After project completion, we offer ongoing technical support packages. Bug fixes, performance improvements, and necessary updates are provided based on your chosen support level. We aim to respond to critical issues within 24 hours and schedule regular maintenance sessions.'
+        },
+        {
+          question: 'How long does a project typically take?',
+          answer: 'Project duration depends on scope. Simple web platforms take 2-3 months, ERP systems 4-8 months, and complex AI integrations 3-6 months. We provide a binding timeline upfront and progress through two-week sprint cycles using Agile methodology.'
+        },
+        {
+          question: 'Is there flexibility in technology choices?',
+          answer: 'Absolutely. We select technologies that best fit your business requirements and team capabilities. We have experience with Node.js, Vue.js, React, Spring Boot, PostgreSQL, MongoDB, and many others, while also considering your organizational preferences.'
+        },
+        {
+          question: 'Is our data secure?',
+          answer: 'Security is our top priority. We provide encrypted communication, secure authentication, regular security audits, and GDPR/KVKK compliance. We host data on secure cloud infrastructure and implement backup strategies for long-term protection.'
+        },
       ],
     },
   },

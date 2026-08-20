@@ -46,7 +46,7 @@ app.post('/api/contact', async (req, res) => {
 
   const mailOptions = {
     from: `"Sartechs İletişim Formu" <${process.env.MAIL_USER}>`,
-    to: process.env.MAIL_TO || 'sariibasmuhammed@gmail.com',
+    to: process.env.MAIL_TO || 'yusuf@sartechs.com',
     replyTo: email,
     subject: `Yeni Teklif Talebi: ${service}`,
     html: `

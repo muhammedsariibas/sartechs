@@ -29,10 +29,10 @@
 
       <div class="flex flex-col items-center md:items-end gap-6">
         <div class="flex gap-4">
-          <a href="mailto:sariibasmuhammed@gmail.com" aria-label="E-posta gönder" class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5">
-            <span class="material-symbols-outlined text-[18px]">share</span>
+          <a href="mailto:yusuf@sartechs.com" aria-label="E-posta gönder" class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5">
+            <span class="material-symbols-outlined text-lg">mail</span>
           </a>
-          <a href="mailto:sariibasmuhammed@gmail.com" aria-label="E-posta gönder" class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5">
+          <a href="mailto:yusuf@sartechs.com" aria-label="E-posta gönder" class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5">
             <span class="material-symbols-outlined text-[18px]">alternate_email</span>
           </a>
         </div>
