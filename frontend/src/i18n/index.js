@@ -25,6 +25,29 @@ export const messages = {
       stat2Label: 'Yapay Zeka Verimliliği',
       stat2Value: '10x Hız',
       stat3Label: 'Sistem Sağlığı',
+      carouselLabel: 'Operasyon vitrini',
+      carouselPrevious: 'Önceki slayt',
+      carouselNext: 'Sonraki slayt',
+      carouselSlides: {
+        results: {
+          eyebrow: 'Vaka çalışması / NorthPeak Logistics',
+          title: 'Operasyonu veriye dayalı bir sisteme dönüştürün.',
+          description: 'ERP ve otomasyon altyapısıyla ekiplerin daha hızlı karar almasını sağlayan ölçülebilir dönüşüm.',
+          visualLabel: 'Operasyonel verimlilik',
+        },
+        ai: {
+          eyebrow: 'AI otomasyon katmanı',
+          title: 'Tekrarlayan işleri akıllı akışlara bırakın.',
+          description: 'LLM entegrasyonları ve süreç analiziyle ekibinizin zamanını gerçek iş değerine geri kazandırın.',
+          visualLabel: 'AI verimlilik skoru',
+        },
+        stack: {
+          eyebrow: 'Güvenilir mühendislik',
+          title: 'Ölçeklenebilir altyapıyla güvenle büyüyün.',
+          description: 'Modern cloud ve DevOps pratikleri, ürününüzün performansını ve sürekliliğini korur.',
+          visualLabel: 'Sistem sağlığı',
+        },
+      },
     },
     services: {
       sectionTitle1: 'Uçtan Uca Dijital',
@@ -90,6 +113,8 @@ export const messages = {
     ecosystem: {
       title: 'Teknoloji Ekosistemimiz',
       subtitle: 'En son teknolojilerle güçlendirilmiş modern altyapı.',
+      categoriesLabel: 'Teknoloji kategorileri',
+      categoryAll: 'Tümü',
     },
     contact: {
       title1: 'Bir Sonraki',
@@ -104,6 +129,11 @@ export const messages = {
       labelDetails: 'Proje Detayları',
       placeholderDetails: 'Projenizden kısaca bahseder misiniz?',
       submit: 'TEKLİF TALEBİ GÖNDER',
+      email: 'sariibasmuhammed@gmail.com',
+      location: 'Türkiye / Uzaktan çalışma',
+      quickContact: 'Hızlı iletişim için e-posta gönder',
+      quickSubject: 'Acil proje görüşmesi',
+      consent: 'Gizlilik Politikası ve KVKK aydınlatma metnini okudum, kişisel verilerimin teklif talebimi yanıtlamak amacıyla işlenmesini kabul ediyorum.',
       serviceOptions: [
         'Özel Yazılım Geliştirme',
         'Yapay Zeka Entegrasyonu',
@@ -116,8 +146,21 @@ export const messages = {
       copyright: 'Sartechs. Tüm hakları saklıdır.',
       company: 'Şirket',
       support: 'Destek',
-      companyLinks: ['Hizmetler', 'Süreç', 'Projeler'],
-      supportLinks: ['İletişim', 'Kariyer', 'Blog'],
+      companyLinks: [
+        { label: 'Hizmetler', href: '#hizmetler' },
+        { label: 'Süreç', href: '#surec' },
+        { label: 'Projeler', href: '#projeler' },
+      ],
+      supportLinks: [
+        { label: 'İletişim', href: '#iletisim' },
+        { label: 'Gizlilik', href: '#gizlilik' },
+        { label: 'KVKK', href: '#kvkk' },
+      ],
+      legalDocuments: [
+        { id: 'gizlilik', title: 'Gizlilik Politikası', body: 'Teklif formunda paylaştığınız bilgiler yalnızca iletişim kurmak ve talebinizi değerlendirmek amacıyla işlenir. Verileriniz yetkisiz kişilerle paylaşılmaz.' },
+        { id: 'cerez', title: 'Çerez Politikası', body: 'Bu tek sayfalık deneyim, zorunlu olmayan pazarlama çerezleri kullanmadan çalışır. Kullanılan teknik depolama, dil tercihi gibi temel deneyim ihtiyaçlarıyla sınırlıdır.' },
+        { id: 'kvkk', title: 'KVKK Aydınlatma', body: '6698 sayılı Kanun kapsamındaki talepleriniz ve veri sahibi haklarınız için sariibasmuhammed@gmail.com adresinden bize ulaşabilirsiniz.' },
+      ],
     },
     about: {
       title1: 'Biz',
@@ -155,9 +198,9 @@ export const messages = {
       title2: '',
       subtitle: 'Yüksek güven gerektiren iş akışlarında, özel yazılım ve AI çözümleriyle ölçülebilir sonuçlar üretiyoruz.',
       items: [
-        { name: 'NorthPeak Logistics', metric: '+42% operasyonel verimlilik', detail: 'ERP ve otomasyon odaklı süreç modernizasyonu.' },
-        { name: 'VerdeOne', metric: '3x daha hızlı ekip koordinasyonu', detail: 'İç operasyon ve müşteri akışı dijitalleşmesi.' },
-        { name: 'HelioOps', metric: '+68% müşteri yanıt hızı', detail: 'Yapay zeka destekli destek ve yönetişim sistemi.' },
+        { name: 'NorthPeak Logistics', metric: '+42% operasyonel verimlilik', problem: 'Dağınık operasyon verileri ve manuel planlama.', solution: 'ERP, iş akışı otomasyonu ve merkezi raporlama.', result: '+42% operasyonel verimlilik.' },
+        { name: 'VerdeOne', metric: '3x daha hızlı ekip koordinasyonu', problem: 'Ekipler arası bilgi akışı ve müşteri takibi kopuktu.', solution: 'İç operasyon paneli ve birleşik müşteri akışı.', result: '3x daha hızlı ekip koordinasyonu.' },
+        { name: 'HelioOps', metric: '+68% müşteri yanıt hızı', problem: 'Destek talepleri önceliklendirilemeden birikiyordu.', solution: 'AI destekli sınıflandırma, yanıt ve yönetişim sistemi.', result: '+68% müşteri yanıt hızı.' },
       ],
     },
   },
@@ -183,6 +226,29 @@ export const messages = {
       stat2Label: 'AI Efficiency',
       stat2Value: '10x Speed',
       stat3Label: 'System Health',
+      carouselLabel: 'Operations showcase',
+      carouselPrevious: 'Previous slide',
+      carouselNext: 'Next slide',
+      carouselSlides: {
+        results: {
+          eyebrow: 'Case study / NorthPeak Logistics',
+          title: 'Turn operations into a data-led system.',
+          description: 'A measurable transformation helping teams make faster decisions through ERP and workflow automation.',
+          visualLabel: 'Operational efficiency',
+        },
+        ai: {
+          eyebrow: 'AI automation layer',
+          title: 'Let intelligent workflows handle the repetitive work.',
+          description: 'Give your team time back with process analysis and LLM integrations built around real business value.',
+          visualLabel: 'AI efficiency score',
+        },
+        stack: {
+          eyebrow: 'Reliable engineering',
+          title: 'Scale with infrastructure you can trust.',
+          description: 'Modern cloud and DevOps practices keep your product performant, resilient, and ready to grow.',
+          visualLabel: 'System health',
+        },
+      },
     },
     services: {
       sectionTitle1: 'End-to-End Digital',
@@ -248,6 +314,8 @@ export const messages = {
     ecosystem: {
       title: 'Our Technology Ecosystem',
       subtitle: 'Modern infrastructure powered by the latest technologies.',
+      categoriesLabel: 'Technology categories',
+      categoryAll: 'All',
     },
     contact: {
       title1: "Let's Kick Off Your",
@@ -262,6 +330,11 @@ export const messages = {
       labelDetails: 'Project Details',
       placeholderDetails: 'Tell us a bit about your project.',
       submit: 'SEND QUOTE REQUEST',
+      email: 'sariibasmuhammed@gmail.com',
+      location: 'Türkiye / Remote delivery',
+      quickContact: 'Email us for an urgent conversation',
+      quickSubject: 'Urgent project conversation',
+      consent: 'I have read the Privacy Policy and KVKK notice, and I consent to the processing of my personal data to respond to my quote request.',
       serviceOptions: [
         'Custom Software Development',
         'AI Integration',
@@ -274,8 +347,21 @@ export const messages = {
       copyright: 'Sartechs. All rights reserved.',
       company: 'Company',
       support: 'Support',
-      companyLinks: ['Services', 'Process', 'Projects'],
-      supportLinks: ['Contact', 'Careers', 'Blog'],
+      companyLinks: [
+        { label: 'Services', href: '#hizmetler' },
+        { label: 'Process', href: '#surec' },
+        { label: 'Projects', href: '#projeler' },
+      ],
+      supportLinks: [
+        { label: 'Contact', href: '#iletisim' },
+        { label: 'Privacy', href: '#gizlilik' },
+        { label: 'KVKK', href: '#kvkk' },
+      ],
+      legalDocuments: [
+        { id: 'gizlilik', title: 'Privacy Policy', body: 'Information shared through the quote form is processed only to contact you and evaluate your request. We do not share it with unauthorized parties.' },
+        { id: 'cerez', title: 'Cookie Policy', body: 'This single-page experience works without non-essential marketing cookies. Technical storage is limited to core experience needs such as language preference.' },
+        { id: 'kvkk', title: 'KVKK Notice', body: 'For data subject requests under Turkish data protection law, contact us at sariibasmuhammed@gmail.com.' },
+      ],
     },
     about: {
       title1: 'Who',
@@ -313,9 +399,9 @@ export const messages = {
       title2: '',
       subtitle: 'We deliver measurable business outcomes with custom software and AI systems built for operational resilience.',
       items: [
-        { name: 'NorthPeak Logistics', metric: '+42% operational efficiency', detail: 'ERP and workflow modernization for critical operations.' },
-        { name: 'VerdeOne', metric: '3x faster team coordination', detail: 'Customer journey and internal operations digitization.' },
-        { name: 'HelioOps', metric: '+68% response speed', detail: 'AI-assisted support and governance platform.' },
+        { name: 'NorthPeak Logistics', metric: '+42% operational efficiency', problem: 'Fragmented operations data and manual planning.', solution: 'ERP, workflow automation, and centralized reporting.', result: '+42% operational efficiency.' },
+        { name: 'VerdeOne', metric: '3x faster team coordination', problem: 'Team information flow and customer follow-up were disconnected.', solution: 'Internal operations panel and unified customer journey.', result: '3x faster team coordination.' },
+        { name: 'HelioOps', metric: '+68% response speed', problem: 'Support requests accumulated without prioritization.', solution: 'AI-assisted classification, response, and governance platform.', result: '+68% response speed.' },
       ],
     },
   },

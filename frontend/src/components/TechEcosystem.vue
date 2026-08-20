@@ -1,5 +1,5 @@
 <template>
-  <section class="px-gutter py-section-padding-v-mobile md:py-section-padding-v bg-surface-container-lowest/30">
+  <section id="teknolojiler" class="px-gutter py-section-padding-v-mobile md:py-section-padding-v bg-surface-container-lowest/30">
     <div class="max-w-container-max mx-auto">
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -16,6 +16,21 @@
         </div>
       </div>
 
+      <div class="mb-8 flex flex-wrap gap-2" role="tablist" :aria-label="t('ecosystem.categoriesLabel')">
+        <button
+          v-for="category in categories"
+          :key="category.key"
+          type="button"
+          role="tab"
+          :aria-selected="activeCategory === category.key"
+          class="rounded-lg border px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] transition-colors"
+          :class="activeCategory === category.key ? 'border-primary bg-primary/10 text-primary' : 'border-white/10 text-on-surface-variant hover:border-white/30 hover:text-white'"
+          @click="activeCategory = category.key"
+        >
+          {{ category.label }}
+        </button>
+      </div>
+
       <!-- Scrolling Viewport -->
       <div class="relative w-full overflow-hidden flex flex-col gap-6 rounded-2xl">
         <!-- Gradient overlays for fade out edges -->
@@ -27,7 +42,7 @@
           <!-- Original Group -->
           <div class="flex gap-6 pr-6">
             <div 
-              v-for="(tech, index) in row1" 
+              v-for="(tech, index) in visibleTechnologies" 
               :key="'row1-orig-' + index" 
               class="w-44 h-32 rounded-xl border flex items-center justify-center flex-col gap-2 transition-all duration-300 group relative overflow-hidden px-4 flex-shrink-0"
               :class="getCategoryStyles(tech.category)"
@@ -42,7 +57,7 @@
           <!-- Duplicate Group -->
           <div class="flex gap-6 pr-6">
             <div 
-              v-for="(tech, index) in row1" 
+              v-for="(tech, index) in visibleTechnologies" 
               :key="'row1-dup-' + index" 
               class="w-44 h-32 rounded-xl border flex items-center justify-center flex-col gap-2 transition-all duration-300 group relative overflow-hidden px-4 flex-shrink-0"
               :class="getCategoryStyles(tech.category)"
@@ -61,7 +76,7 @@
           <!-- Original Group -->
           <div class="flex gap-6 pr-6">
             <div 
-              v-for="(tech, index) in row2" 
+              v-for="(tech, index) in visibleTechnologies" 
               :key="'row2-orig-' + index" 
               class="w-44 h-32 rounded-xl border flex items-center justify-center flex-col gap-2 transition-all duration-300 group relative overflow-hidden px-4 flex-shrink-0"
               :class="getCategoryStyles(tech.category)"
@@ -76,7 +91,7 @@
           <!-- Duplicate Group -->
           <div class="flex gap-6 pr-6">
             <div 
-              v-for="(tech, index) in row2" 
+              v-for="(tech, index) in visibleTechnologies" 
               :key="'row2-dup-' + index" 
               class="w-44 h-32 rounded-xl border flex items-center justify-center flex-col gap-2 transition-all duration-300 group relative overflow-hidden px-4 flex-shrink-0"
               :class="getCategoryStyles(tech.category)"
@@ -95,9 +110,18 @@
 </template>
 
 <script setup>
+import { computed, ref } from 'vue'
 import { useLocale } from '../i18n/index.js'
 
 const { t } = useLocale()
+const activeCategory = ref('all')
+const categories = computed(() => [
+  { key: 'all', label: t('ecosystem.categoryAll') },
+  { key: 'Frontend', label: 'Frontend' },
+  { key: 'Backend', label: 'Backend' },
+  { key: 'DevOps', label: 'DevOps' },
+  { key: 'AI', label: 'AI' },
+])
 
 // Grouping Row 1 by Category: Frontend first, then Backend
 const row1 = [
@@ -114,7 +138,7 @@ const row1 = [
   { name: 'PostgreSQL', icon: 'database', category: 'Backend' },
   { name: 'MySQL', icon: 'database', category: 'Backend' },
   { name: 'Express.js', icon: 'terminal', category: 'Backend' },
-  { name: 'RabbitMQ', icon: 'message', category: 'Backend' } // DevOps'tan buraya alındı
+  { name: 'RabbitMQ', icon: 'message', category: 'Backend' }
 ]
 
 // Grouping Row 2 by Category: DevOps first, then AI
@@ -129,13 +153,13 @@ const row2 = [
   // AI
   { name: 'PyTorch', icon: 'psychology', category: 'AI' },
   { name: 'LLM Engine', icon: 'smart_toy' , category: 'AI' },
-  { name: 'OpenAI API', icon: 'integration_instructions', category: 'AI' },
-  { name: 'PyTorch', icon: 'psychology', category: 'AI' },
-  { name: 'LLM Engine', icon: 'smart_toy' , category: 'AI' },
   { name: 'OpenAI API', icon: 'integration_instructions', category: 'AI' }
 ]
-// Sort Row 2 by Category to keep Backend, DevOps, AI items adjacent
-row2.sort((a, b) => a.category.localeCompare(b.category))
+
+const technologies = [...row1, ...row2]
+const visibleTechnologies = computed(() => activeCategory.value === 'all'
+  ? technologies
+  : technologies.filter((technology) => technology.category === activeCategory.value))
 
 function getCategoryStyles(category) {
   switch (category) {

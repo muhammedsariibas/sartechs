@@ -24,7 +24,7 @@
           </div>
           <h3 class="text-headline-md text-[20px] mb-4 text-white">{{ card.title }}</h3>
           <p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">{{ card.description }}</p>
-          <a href="#" class="inline-flex items-center text-primary font-label-md gap-2 group-hover:translate-x-1 transition-transform">
+          <a href="#iletisim" class="inline-flex items-center text-primary font-label-md gap-2 group-hover:translate-x-1 transition-transform">
             {{ t('services.details') }} <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
           </a>
         </div>

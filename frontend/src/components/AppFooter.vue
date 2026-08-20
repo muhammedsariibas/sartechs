@@ -15,29 +15,35 @@
       <div class="flex gap-12">
         <div class="flex flex-col gap-3 text-center md:text-left">
           <span class="font-label-md text-primary mb-2 uppercase tracking-widest text-[10px]">{{ t('footer.company') }}</span>
-          <a v-for="link in t('footer.companyLinks')" :key="link" href="#" class="text-on-surface-variant hover:text-white transition-colors text-xs">
-            {{ link }}
+          <a v-for="link in t('footer.companyLinks')" :key="link.label" :href="link.href" class="text-on-surface-variant hover:text-white transition-colors text-xs">
+            {{ link.label }}
           </a>
         </div>
         <div class="flex flex-col gap-3 text-center md:text-left">
           <span class="font-label-md text-primary mb-2 uppercase tracking-widest text-[10px]">{{ t('footer.support') }}</span>
-          <a v-for="link in t('footer.supportLinks')" :key="link" href="#" class="text-on-surface-variant hover:text-white transition-colors text-xs">
-            {{ link }}
+          <a v-for="link in t('footer.supportLinks')" :key="link.label" :href="link.href" class="text-on-surface-variant hover:text-white transition-colors text-xs">
+            {{ link.label }}
           </a>
         </div>
       </div>
 
       <div class="flex flex-col items-center md:items-end gap-6">
         <div class="flex gap-4">
-          <a href="#" class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5">
+          <a href="mailto:sariibasmuhammed@gmail.com" aria-label="E-posta gönder" class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5">
             <span class="material-symbols-outlined text-[18px]">share</span>
           </a>
-          <a href="#" class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5">
+          <a href="mailto:sariibasmuhammed@gmail.com" aria-label="E-posta gönder" class="w-9 h-9 glass-panel rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all border-white/5">
             <span class="material-symbols-outlined text-[18px]">alternate_email</span>
           </a>
         </div>
         <p class="font-body-md text-[11px] text-on-surface-variant opacity-40">© {{ new Date().getFullYear() }} {{ t('footer.copyright') }}</p>
       </div>
+    </div>
+    <div class="max-w-container-max mx-auto grid gap-4 border-t border-white/5 px-gutter py-8 text-xs leading-relaxed text-on-surface-variant md:grid-cols-3">
+      <details v-for="document in t('footer.legalDocuments')" :id="document.id" :key="document.id" class="group">
+        <summary class="cursor-pointer list-none font-semibold text-white transition-colors group-open:text-primary">{{ document.title }}</summary>
+        <p class="mt-3 max-w-xl">{{ document.body }}</p>
+      </details>
     </div>
   </footer>
 </template>

@@ -8,6 +8,21 @@
         <p class="text-on-surface-variant">{{ t('contact.subtitle') }}</p>
       </div>
 
+      <div class="mb-10 grid grid-cols-1 gap-3 border-y border-white/10 py-5 text-sm text-on-surface-variant md:grid-cols-3">
+        <a :href="`mailto:${t('contact.email')}`" class="flex items-center justify-center gap-2 transition-colors hover:text-white md:justify-start">
+          <span class="material-symbols-outlined text-primary">mail</span>
+          {{ t('contact.email') }}
+        </a>
+        <span class="flex items-center justify-center gap-2 md:justify-start">
+          <span class="material-symbols-outlined text-primary">location_on</span>
+          {{ t('contact.location') }}
+        </span>
+        <a :href="`mailto:${t('contact.email')}?subject=${encodeURIComponent(t('contact.quickSubject'))}`" class="flex items-center justify-center gap-2 font-semibold text-primary transition-colors hover:text-white md:justify-start">
+          <span class="material-symbols-outlined">bolt</span>
+          {{ t('contact.quickContact') }}
+        </a>
+      </div>
+
       <form class="space-y-6" @submit.prevent="handleSubmit">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="space-y-2">
@@ -50,6 +65,11 @@
           ></textarea>
         </div>
 
+        <label class="flex items-start gap-3 text-sm text-on-surface-variant">
+          <input v-model="form.consent" type="checkbox" required class="mt-1 h-4 w-4 accent-primary" />
+          <span>{{ t('contact.consent') }}</span>
+        </label>
+
         <button
           type="submit"
           :disabled="loading"
@@ -74,7 +94,7 @@ const { t, messages, locale } = useLocale()
 
 const serviceOptions = computed(() => messages[locale.value].contact.serviceOptions)
 
-const form = reactive({ name: '', email: '', service: '', details: '' })
+const form = reactive({ name: '', email: '', service: '', details: '', consent: false })
 const loading = ref(false)
 const feedback = reactive({ message: '', success: false })
 
@@ -95,6 +115,7 @@ async function handleSubmit() {
       form.email = ''
       form.service = ''
       form.details = ''
+      form.consent = false
     }
   } catch {
     feedback.message = 'Bağlantı hatası. Lütfen tekrar deneyin.'

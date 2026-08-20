@@ -22,13 +22,29 @@
             </span>
           </div>
 
-          <div class="mb-6 h-12 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
-            {{ project.name }}
+          <div class="mb-6 h-28 rounded-xl border border-white/10 bg-gradient-to-br from-primary/15 via-white/[0.03] to-transparent p-4">
+            <div class="flex h-full items-end gap-2">
+              <span v-for="bar in [40, 64, 52, 88, 76]" :key="bar" class="flex-1 rounded-t bg-primary/50" :style="{ height: `${bar}%` }"></span>
+            </div>
           </div>
+          <h3 class="mb-5 text-lg font-semibold text-white">
+            {{ project.name }}
+          </h3>
 
-          <p class="text-on-surface-variant text-sm leading-relaxed">
-            {{ project.detail }}
-          </p>
+          <dl class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <dt class="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-primary">{{ t('projects.problem') }}</dt>
+              <dd class="text-on-surface-variant">{{ project.problem }}</dd>
+            </div>
+            <div>
+              <dt class="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-primary">{{ t('projects.solution') }}</dt>
+              <dd class="text-on-surface-variant">{{ project.solution }}</dd>
+            </div>
+            <div>
+              <dt class="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-primary">{{ t('projects.result') }}</dt>
+              <dd class="font-semibold text-white">{{ project.result }}</dd>
+            </div>
+          </dl>
         </article>
       </div>
     </div>

@@ -20,7 +20,7 @@
         <a
           v-for="link in navLinks"
           :key="link.id"
-          href="#"
+          :href="`#${link.id}`"
           class="relative font-label-md transition-colors duration-200 py-1"
           :class="activeSection === link.id ? 'text-white' : 'text-on-surface-variant hover:text-white'"
           @click.prevent="scrollTo(link.id)"
@@ -32,7 +32,7 @@
           ></span>
         </a>
         <a
-          href="#"
+          href="#iletisim"
           class="bg-primary text-white px-5 py-2 rounded-lg font-label-md glow-button"
           @click.prevent="scrollTo('iletisim')"
         >
@@ -68,7 +68,7 @@
         <a
           v-for="link in navLinks"
           :key="link.id"
-          href="#"
+          :href="`#${link.id}`"
           class="font-label-md py-2 transition-colors duration-200"
           :class="activeSection === link.id ? 'text-primary' : 'text-on-surface-variant'"
           @click.prevent="scrollTo(link.id); mobileOpen = false"
@@ -76,7 +76,7 @@
           {{ link.label }}
         </a>
         <a
-          href="#"
+          href="#iletisim"
           class="bg-primary text-white px-5 py-2 rounded-lg font-label-md text-center glow-button"
           @click.prevent="scrollTo('iletisim'); mobileOpen = false"
         >
@@ -101,7 +101,7 @@ const navLinks = computed(() => [
   { id: 'hizmetler', label: t('nav.services') },
   { id: 'surec', label: t('nav.process') },
   { id: 'hakkimizda', label: t('nav.about') },
-  { id: 'projeler', label: t('nav.projects') },
+  //{ id: 'projeler', label: t('nav.projects') },
 ])
 
 const activeSection = ref(null)

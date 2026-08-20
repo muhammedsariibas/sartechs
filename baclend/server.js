@@ -26,19 +26,20 @@ const transporter = nodemailer.createTransport({
 })
 
 // Input validation
-function validateContactForm({ name, email, service, details }) {
+function validateContactForm({ name, email, service, details, consent }) {
   if (!name || name.trim().length < 2) return 'Geçerli bir ad soyad girin.'
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'Geçerli bir e-posta girin.'
   if (!service || service.trim().length < 2) return 'Hizmet türü seçin.'
   if (!details || details.trim().length < 10) return 'Proje detayları en az 10 karakter olmalıdır.'
+  if (!consent) return 'Gizlilik ve KVKK onayı gereklidir.'
   return null
 }
 
 // POST /api/contact
 app.post('/api/contact', async (req, res) => {
-  const { name, email, service, details } = req.body
+  const { name, email, service, details, consent } = req.body
 
-  const validationError = validateContactForm({ name, email, service, details })
+  const validationError = validateContactForm({ name, email, service, details, consent })
   if (validationError) {
     return res.status(400).json({ success: false, message: validationError })
   }
